@@ -1,9 +1,11 @@
 import { Platform } from "react-native";
 import firebase from "@react-native-firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import "@react-native-firebase/auth";
-import "@react-native-firebase/firestore";
+import '@react-native-firebase/auth';
+import '@react-native-firebase/firestore';
 import "@react-native-firebase/storage";
+import "@react-native-firebase/functions";
+
 import {
   API_KEY,
   APP_NAME,

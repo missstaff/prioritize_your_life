@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
-import { getFireApp } from "../../../getFireApp";
-import { displayToast, validateTextInput } from "../../utility/utilities";
+import { createAccount, validateTextInput } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 
@@ -11,7 +10,6 @@ import { styles } from "./Styles";
 
 const SignUpScreen = () => {
 
-    const firebase = getFireApp();
     const navigation = useNavigation();
 
     const [submitIsDisabled, setSubmitIsDisabled] = useState(true);
@@ -32,13 +30,7 @@ const SignUpScreen = () => {
     };
 
     const onPressSubmit = async () => {
-        try {
-            const user = await firebase.auth().createUserWithEmailAndPassword(state.email, state.password);
-            console.log("user", user)
-        } catch (error) {
-            console.log(`Error: ${error.message}\n${error.stack}`);
-            displayToast("create_account_failure", "error");
-        }
+       await createAccount(state);
     };
 
     useEffect(() => {

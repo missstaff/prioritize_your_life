@@ -20,27 +20,44 @@ const SignInScreen = () => {
 
 
     const onPressLogin = async () => {
+        let user;
+
         const isValidEmail = validateTextInput({
             condition: state.email,
             id: "invalid_email",
             type: "error"
         });
+
         const isValidPassword = validateTextInput({
             condition: state.password,
             id: "password_required",
             type: "error"
         });
+
+        
         if (!isValidEmail || !isValidPassword) {
             return;
         }
+
+
         try {
-            await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
+            user = await firebase.auth().signInWithEmailAndPassword(state.email, state.password);;
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
             displayToast("login_failure", "error");
             return;
         }
+
+        try {
+            firebase.firestore().collection("users").doc(user.user.uid).update({
+                last_login: new Date(),
+            });
+        } catch (error) {
+            console.log(`Error: ${error.message}\n${error.stack}`);
+        }
+
     };
+
 
     const onPressForgotPassword = () => {
         navigation.navigate("PasswordResetScreen");

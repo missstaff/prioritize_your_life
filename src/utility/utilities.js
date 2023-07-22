@@ -4,9 +4,6 @@ import { EMAIL_REGEX, PASSWORD_REGEX } from "./constants";
 import { ERROR_MESSAGES } from "./errorMessages";
 
 
-
-
-
 export const displayToast = (id, type) => {
     const errorType = ERROR_MESSAGES[id];
     return Toast.show({
@@ -55,4 +52,43 @@ export const validateTextInput = (textInput) => {
 
     textInput?.callback && textInput?.callback(isValid);
     return isValid;
+};
+
+export const createAccount = async (state) => {
+
+    const firebase = getFireApp();
+    const { email, password, username } = state;
+    let user = {};
+
+    try {
+        user = await firebase.auth().createUserWithEmailAndPassword(email, password);
+        if (user) {
+            await user.user.updateProfile({
+                displayName: username,
+            });
+        }
+    } catch (error) {
+        console.log(`Error: ${error.message}\n${error.stack}`);
+        displayToast("create_account_failure", "error");
+        return;
+    }
+
+    await createDocument(user, username);
+};
+
+export const createDocument = async (user, username) => {
+   
+    if (user) {
+        const firebase = getFireApp();
+        const uid = user.user.uid;
+        try {
+            firebase.firestore().collection("users").doc(uid).set({
+                account_created: new Date(),
+                last_login: new Date(),
+                username: username,
+            });
+        } catch (error) {
+            console.log(`Error: ${error.message}\n${error.stack}`);
+        }
+    }
 };
