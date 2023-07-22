@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
 import { getFireApp } from "../../../getFireApp";
-import { displayErrorToast, validateTextInput } from "../../utility/utilities";
+import { displayToast, validateTextInput } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 
@@ -22,15 +22,13 @@ const SignInScreen = () => {
     const onPressLogin = async () => {
         const isValidEmail = validateTextInput({
             condition: state.email,
-            errorText1: "A valid email is required.",
-            errorText2: "Please try again.",
-            type: 2
+            id: "invalid_email",
+            type: "error"
         });
         const isValidPassword = validateTextInput({
             condition: state.password,
-            errorText1: "A valid password is required.",
-            errorText2: "Please try again.",
-            type: 3
+            id: "password_required",
+            type: "error"
         });
         if (!isValidEmail || !isValidPassword) {
             return;
@@ -39,7 +37,7 @@ const SignInScreen = () => {
             await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
-            displayErrorToast("Email and/or password incorrect.", "Please try again.");
+            displayToast("login_failure", "error");
             return;
         }
     };
@@ -73,15 +71,18 @@ const SignInScreen = () => {
             </View>
 
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressForgotPassword}>
                 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressLogin}
                 style={styles.loginBtn}>
                 <Text style={styles.loginText}>LOGIN </Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>Signup</Text>
             </TouchableOpacity>

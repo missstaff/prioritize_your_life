@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
 import { getFireApp } from "../../../getFireApp";
-import { displayErrorToast, validateTextInput } from "../../utility/utilities";
+import { displayToast, validateTextInput } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 
@@ -19,7 +19,7 @@ const PasswordResetScreen = () => {
 
 
     const onPressSignUp = () => {
-        navigation.navigate("SignUp");
+        navigation.navigate("SignIn", { displayToast: false });
     };
 
     const onPressSubmit = async () => {
@@ -27,9 +27,8 @@ const PasswordResetScreen = () => {
 
             const isValid = validateTextInput({
                 condition: state.email,
-                errorText1: "A valid email is required.",
-                errorText2: "Please try again.",
-                type: 2
+                id: "invalid_email",
+                type: "error",
             });
 
             if (!isValid) {
@@ -37,12 +36,13 @@ const PasswordResetScreen = () => {
             } else {
                 await firebase.auth().sendPasswordResetEmail(state.email);
                 setState({ ...state, email: "" });
+                displayToast("password_reset", "success");
                 navigation.navigate("SignIn");
             }
 
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
-            displayErrorToast("Failed to send password reset email.", "Please check your email address.");
+            displayToast("password_reset_failure", "error");
             return;
         }
     };
@@ -62,9 +62,8 @@ const PasswordResetScreen = () => {
                             {
                                 callback: null,
                                 condition: state.email,
-                                errorText1: "A valid email is required.",
-                                errorText2: "Please try again.",
-                                type: 2,
+                                id: "invalid_email",
+                                type: "error"
                             }
                         )
                     }
@@ -72,11 +71,13 @@ const PasswordResetScreen = () => {
             </View>
 
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>
                 <Text style={styles.loginText}>SUBMIT</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>Signup</Text>
             </TouchableOpacity>

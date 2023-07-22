@@ -3,7 +3,7 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
 import { getFireApp } from "../../../getFireApp";
-import { displayErrorToast, validateTextInput } from "../../utility/utilities";
+import { displayToast, validateTextInput } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 
@@ -36,7 +36,7 @@ const SignUpScreen = () => {
             await firebase.auth().createUserWithEmailAndPassword(state.email, state.password);
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
-            displayErrorToast("Failed to create account.", "Please try again.");
+            displayToast("create_account_failure", "error");
         }
     };
 
@@ -68,9 +68,8 @@ const SignUpScreen = () => {
                             {
                                 callback: setUserNameIsValid,
                                 condition: state.username.length > 1,
-                                errorText1: "Username must be at least 2 letters.",
-                                errorText2: "Please try again.",
-                                type: 1,
+                                id: "invalid_username",
+                                type: "error"
                             }
                         )
                     }
@@ -86,9 +85,8 @@ const SignUpScreen = () => {
                             {
                                 callback: setEmailIsValid,
                                 condition: state.email,
-                                errorText1: "A valid email is required.",
-                                errorText2: "Please try again.",
-                                type: 2,
+                                id: "invalid_email",
+                                type: "error"
                             }
                         )
                     }
@@ -104,9 +102,8 @@ const SignUpScreen = () => {
                             {
                                 callback: setPasswordIsValid,
                                 condition: state.password,
-                                errorText1: "Password must be 7 to 25 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-                                errorText2: "Please try again.",
-                                type: 3,
+                                id: "invalid_password",
+                                type: "error"
                             }
                         )
                     }
@@ -122,19 +119,20 @@ const SignUpScreen = () => {
                             {
                                 callback: setConfirmPasswordIsValid,
                                 condition: state.confirmPassword === state.password,
-                                errorText1: "Passwords must match.",
-                                errorText2: "Please try again.",
-                                type: 4,
+                                id: "passwords_do_not_match",
+                                type: "error"
                             }
                         )
                     }
                 />
             </View>
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressForgotPassword}>
                 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
                 disabled={submitIsDisabled}
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>

@@ -10,7 +10,7 @@ import ShowIf from "../ShowIf";
 import SignInScreen from "../../screens/login/SignInScreen";
 import SignUpScreen from "../../screens/login/SignUpScreen";
 import { getFireApp } from "../../../getFireApp";
-import { displayErrorToast, logOut } from "../../utility/utilities";
+import { displayToast, logOut } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 
 
@@ -33,7 +33,7 @@ const MasterFlow = () => {
             });
         } catch (error) {
             (console.log(`Error: ${error.message}\n${error.stack}`));
-            displayErrorToast("Failed to log in.", "Please try again.");
+            displayToast("login_failure", "error");
             return;
         }
 
