@@ -4,7 +4,7 @@ import { EMAIL_REGEX, PASSWORD_REGEX } from "./constants";
 import { ERROR_MESSAGES } from "./errorMessages";
 
 
-const firebase = getFireApp();
+
 
 
 export const displayToast = (id, type) => {
@@ -17,6 +17,7 @@ export const displayToast = (id, type) => {
 };
 
 export const logOut = async () => {
+    const firebase = getFireApp();
     try {
         await firebase.auth().signOut();
     } catch (error) {

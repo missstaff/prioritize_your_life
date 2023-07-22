@@ -33,7 +33,8 @@ const SignUpScreen = () => {
 
     const onPressSubmit = async () => {
         try {
-            await firebase.auth().createUserWithEmailAndPassword(state.email, state.password);
+            const user = await firebase.auth().createUserWithEmailAndPassword(state.email, state.password);
+            console.log("user", user)
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
             displayToast("create_account_failure", "error");
