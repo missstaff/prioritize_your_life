@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "362018442563",
+    "project_id": "organizer-eb8b7",
+    "storage_bucket": "organizer-eb8b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362018442563:android:7b9aa2538d2795635873f6",
+        "android_client_info": {
+          "package_name": "com.missstaff.organizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362018442563-30pvdartqs3puartr38dhtopp5n7griu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADXPQioCIuQYBcc4YzfheqXUSuh2RgJJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362018442563-30pvdartqs3puartr38dhtopp5n7griu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "362018442563-cplrjhege2ue4eccjh7nfe43jon54gfp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.missstaff.organizer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

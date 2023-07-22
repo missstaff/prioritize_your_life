@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import AppTextInput from "../../components/ui/AppTextInput";
+import { getFireApp } from "../../../getFireApp";
+import { displayErrorToast, validateTextInput } from "../../utility/utilities";
+import { APP_COLORS } from "../../utility/constants";
+import { styles } from "./Styles";
+
+
+const SignInScreen = () => {
+
+    const firebase = getFireApp();
+    const navigation = useNavigation();
+
+    const [state, setState] = useState({
+        email: "",
+        password: "",
+    });
+
+
+    const onPressLogin = async () => {
+        const isValidEmail = validateTextInput({
+            condition: state.email,
+            errorText1: "A valid email is required.",
+            errorText2: "Please try again.",
+            type: 2
+        });
+        const isValidPassword = validateTextInput({
+            condition: state.password,
+            errorText1: "A valid password is required.",
+            errorText2: "Please try again.",
+            type: 3
+        });
+        if (!isValidEmail || !isValidPassword) {
+            return;
+        }
+        try {
+            await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
+        } catch (error) {
+            console.log(`Error: ${error.message}\n${error.stack}`);
+            displayErrorToast("Email and/or password incorrect.", "Please try again.");
+            return;
+        }
+    };
+
+    const onPressForgotPassword = () => {
+        navigation.navigate("PasswordResetScreen");
+    };
+
+    const onPressSignUp = () => {
+        navigation.navigate("SignUp");
+    };
+
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Login</Text>
+            <View style={styles.inputView}>
+                <AppTextInput
+                    style={styles.inputText}
+                    placeholder="Email"
+                    placeholderTextColor={APP_COLORS.triodenary}
+                    onChangeText={(text) => setState({ ...state, email: text })} />
+            </View>
+            <View style={styles.inputView}>
+                <AppTextInput
+                    style={styles.inputText}
+                    secureTextEntry
+                    placeholder="Password"
+                    placeholderTextColor={APP_COLORS.triodenary}
+                    onChangeText={(text) => setState({ ...state, password: text })} />
+            </View>
+
+            <TouchableOpacity
+                onPress={onPressForgotPassword}>
+                <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={onPressLogin}
+                style={styles.loginBtn}>
+                <Text style={styles.loginText}>LOGIN </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={onPressSignUp}>
+                <Text style={styles.forgotAndSignUpText}>Signup</Text>
+            </TouchableOpacity>
+        </View>
+    );
+};
+
+export default SignInScreen;

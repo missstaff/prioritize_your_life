@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import MasterFlow from "./src/components/navigation/MasterFlow";
+import { useColorScheme } from "react-native";
 
-export default function App() {
+
+const App = () => {
+  const scheme = useColorScheme();
+  const statusBarStyle = scheme === "dark" ? "light" : "dark";
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <MasterFlow />
+      <StatusBar style={statusBarStyle} />
+    </SafeAreaProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
