@@ -34,9 +34,9 @@ export function getFireApp() {
 
   // Conditionally set the appId based on the platform
   if (Platform.OS === "ios") {
-    firebaseConfig.appId = ANDROID_APP_ID;
-  } else if (Platform.OS === "android") {
     firebaseConfig.appId = IOS_APP_ID;
+  } else if (Platform.OS === "android") {
+    firebaseConfig.appId = ANDROID_APP_ID;
   } else if (Platform.OS === "web") {
     firebaseConfig.appId = WEB_APP_ID;
   }

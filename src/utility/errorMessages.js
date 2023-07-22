@@ -19,6 +19,10 @@ export const ERROR_MESSAGES = {
         errorText1: "Email and/or password incorrect.",
         errorText2: "Please try again."
     },
+    "logout_failure": {
+        errorText1: "Failed to log out.",
+        errorText2: "Please try again."
+    },
     "password_required": {
         errorText1: "A valid password is required.",
         errorText2: "Please try again."

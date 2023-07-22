@@ -21,7 +21,7 @@ export const logOut = async () => {
         await firebase.auth().signOut();
     } catch (error) {
         console.log(`Error: ${error.message}\n${error.stack}`);
-        displayToast("login_failure", "error");
+        displayToast("logout_failure", "error");
         return;
     }
 };
