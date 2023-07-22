@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
-import { getFireApp } from "../../../getFireApp";
 import { validateTextInput } from "../../utility/auth-utilities";
 import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
+import { getFireApp } from "../../../getFireApp";
 const firebase = getFireApp();
+
 
 const SignInScreen = () => {
 
@@ -18,22 +19,31 @@ const SignInScreen = () => {
         password: "",
     });
 
+    const onPressForgotPassword = () => {
+        navigation.navigate("PasswordResetScreen");
+    };
+
+    const onPressSignUp = () => {
+        navigation.navigate("SignUp");
+    };
 
     const onPressLogin = async () => {
+
         let user;
         let isValidEmail = false;
         let isValidPassword = false;
 
+
         isValidEmail = validateTextInput({
             condition: state.email,
             id: "invalid_email",
-            type: "error"
+            type: "error",
         });
 
         isValidPassword = validateTextInput({
             condition: state.password,
             id: "password_required",
-            type: "error"
+            type: "error",
         });
 
 
@@ -43,7 +53,7 @@ const SignInScreen = () => {
 
 
         try {
-            user = await firebase.auth().signInWithEmailAndPassword(state.email, state.password);;
+            user = await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
         } catch (error) {
             console.log(`Error: ${error.message}\n${error.stack}`);
             displayToast("login_failure", "error");
@@ -61,17 +71,11 @@ const SignInScreen = () => {
     };
 
 
-    const onPressForgotPassword = () => {
-        navigation.navigate("PasswordResetScreen");
-    };
-
-    const onPressSignUp = () => {
-        navigation.navigate("SignUp");
-    };
-
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
+            <Text style={styles.title}>
+                Login
+            </Text>
             <View style={styles.inputView}>
                 <AppTextInput
                     style={styles.inputText}
@@ -90,6 +94,7 @@ const SignInScreen = () => {
 
             <TouchableOpacity
                 accessibilityRole="link"
+                accessibilityLabel="Forgot password link"
                 onPress={onPressForgotPassword}>
                 <Text style={styles.forgotAndSignUpText}>
                     Forgot Password?
@@ -97,6 +102,7 @@ const SignInScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="button"
+                accessibilityLabel="Login button"
                 onPress={onPressLogin}
                 style={styles.loginBtn}>
                 <Text style={styles.loginText}>
@@ -105,6 +111,7 @@ const SignInScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="link"
+                accessibilityLabel="Signup link"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>
                     Signup

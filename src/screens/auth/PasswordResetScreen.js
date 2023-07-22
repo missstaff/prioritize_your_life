@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
-import { getFireApp } from "../../../getFireApp";
 import { validateTextInput } from "../../utility/auth-utilities";
 import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
+import { getFireApp } from "../../../getFireApp";
 const firebase = getFireApp();
 
 
@@ -64,7 +64,7 @@ const PasswordResetScreen = () => {
                                 callback: null,
                                 condition: state.email,
                                 id: "invalid_email",
-                                type: "error"
+                                type: "error",
                             }
                         )
                     }
@@ -75,12 +75,16 @@ const PasswordResetScreen = () => {
                 accessibilityRole="button"
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>
-                <Text style={styles.loginText}>SUBMIT</Text>
+                <Text style={styles.loginText}>
+                    SUBMIT
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="button"
                 onPress={onPressSignUp}>
-                <Text style={styles.forgotAndSignUpText}>Signup</Text>
+                <Text style={styles.forgotAndSignUpText}>
+                    Signup
+                </Text>
             </TouchableOpacity>
         </View>
     );

@@ -5,7 +5,6 @@ import '@react-native-firebase/auth';
 import '@react-native-firebase/firestore';
 import "@react-native-firebase/storage";
 import "@react-native-firebase/functions";
-
 import {
   API_KEY,
   APP_NAME,
@@ -22,7 +21,7 @@ import {
 
 
 export function getFireApp() {
-
+  
   const firebaseConfig = {
     apiKey: API_KEY,
     authDomain: AUTH_DOMAIN,

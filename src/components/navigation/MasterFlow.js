@@ -11,7 +11,7 @@ import ShowIf from "../ShowIf";
 import SignInScreen from "../../screens/auth/SignInScreen";
 import SignUpScreen from "../../screens/auth/SignUpScreen";
 import { getFireApp } from "../../../getFireApp";
-import { logOut } from "../../utility/auth-utilities";
+import { logout } from "../../utility/auth-utilities";
 import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 const firebase = getFireApp();
@@ -21,11 +21,10 @@ const MasterFlow = () => {
 
     let { colors } = useTheme();
     const scheme = useColorScheme();
-   
     const Stack = createNativeStackNavigator();
 
-    const [isSignedIn, setIsSignedIn] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isSignedIn, setIsSignedIn] = useState(false);
     const textColor = scheme === "dark" ? colors.background : colors.text;
 
 
@@ -50,13 +49,13 @@ const MasterFlow = () => {
         return (
             <View
                 style={{
+                    alignItems: "center",
                     backgroundColor: APP_COLORS.primary,
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
                     justifyContent: "center",
                     height: "100%",
-                    width:"100%",
+                    width: "100%",
                 }}>
                 <LoadingSpinner color={APP_COLORS.secondary} size="large" />
             </View>
@@ -77,12 +76,12 @@ const MasterFlow = () => {
                                     component={HomeScreen}
                                     name="Home"
                                     options={{
-                                        headerShown: true,
                                         headerBackTitle: "",
-                                        headerTintColor: APP_COLORS.primary,
                                         headerShadowVisible: false,
+                                        headerShown: true,
+                                        headerTintColor: APP_COLORS.primary,
                                         headerTitle: "Dashboard",
-                                        headerRight: () => <Text onPress={logOut} style={{ color: textColor }}>Logout</Text>,
+                                        headerRight: () => <Text onPress={logout} style={{ color: textColor }}>Logout</Text>,
                                     }} />
                                 <Stack.Screen
                                     component={ProfileScreen}
@@ -107,20 +106,20 @@ const MasterFlow = () => {
                                     component={SignUpScreen}
                                     name="SignUp"
                                     options={{
-                                        headerShown: true,
                                         headerBackTitle: "",
-                                        headerTintColor: textColor,
                                         headerShadowVisible: false,
+                                        headerShown: true,
+                                        headerTintColor: textColor,
                                         headerTitle: "Back",
                                     }} />
                                 <Stack.Screen
                                     component={PasswordResetScreen}
                                     name="PasswordResetScreen"
                                     options={{
-                                        headerShown: true,
                                         headerBackTitle: "",
-                                        headerTintColor: textColor,
                                         headerShadowVisible: false,
+                                        headerShown: true,
+                                        headerTintColor: textColor,
                                         headerTitle: "Back",
                                     }} />
                             </Stack.Navigator>
