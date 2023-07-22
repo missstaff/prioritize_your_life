@@ -8,7 +8,7 @@ const HomeScreen = () => {
     const firebase = getFireApp();
     const scheme = useColorScheme();
     let { colors } = useTheme();
-    
+
     return (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <Text style={{ color: colors.text }}>Home Screen</Text>

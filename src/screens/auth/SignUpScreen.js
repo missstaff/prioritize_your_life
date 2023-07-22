@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
-import { getFireApp } from "../../../getFireApp";
-import { displayToast, validateTextInput } from "../../utility/utilities";
+import { createAccount, validateTextInput } from "../../utility/auth-utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 
@@ -11,14 +10,14 @@ import { styles } from "./Styles";
 
 const SignUpScreen = () => {
 
-    const firebase = getFireApp();
     const navigation = useNavigation();
 
-    const [submitIsDisabled, setSubmitIsDisabled] = useState(true);
+    const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
     const [emailIsValid, setEmailIsValid] = useState(false);
     const [passwordIsValid, setPasswordIsValid] = useState(false);
-    const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
+    const [submitIsDisabled, setSubmitIsDisabled] = useState(true);
     const [userNameIsValid, setUserNameIsValid] = useState(false);
+
     const [state, setState] = useState({
         email: "",
         password: "",
@@ -32,21 +31,16 @@ const SignUpScreen = () => {
     };
 
     const onPressSubmit = async () => {
-        try {
-            await firebase.auth().createUserWithEmailAndPassword(state.email, state.password);
-        } catch (error) {
-            console.log(`Error: ${error.message}\n${error.stack}`);
-            displayToast("create_account_failure", "error");
-        }
+        await createAccount(state);
     };
 
     useEffect(() => {
-        if (userNameIsValid && emailIsValid && passwordIsValid && confirmPasswordIsValid) {
+        if (confirmPasswordIsValid && emailIsValid && passwordIsValid && userNameIsValid) {
             setSubmitIsDisabled(false);
         } else {
             setSubmitIsDisabled(true);
         }
-    }, [userNameIsValid, emailIsValid, passwordIsValid, confirmPasswordIsValid]);
+    }, [confirmPasswordIsValid, emailIsValid, passwordIsValid, userNameIsValid,]);
 
 
     return (
@@ -69,7 +63,7 @@ const SignUpScreen = () => {
                                 callback: setUserNameIsValid,
                                 condition: state.username.length > 1,
                                 id: "invalid_username",
-                                type: "error"
+                                type: "error",
                             }
                         )
                     }
@@ -86,7 +80,7 @@ const SignUpScreen = () => {
                                 callback: setEmailIsValid,
                                 condition: state.email,
                                 id: "invalid_email",
-                                type: "error"
+                                type: "error",
                             }
                         )
                     }
@@ -103,7 +97,7 @@ const SignUpScreen = () => {
                                 callback: setPasswordIsValid,
                                 condition: state.password,
                                 id: "invalid_password",
-                                type: "error"
+                                type: "error",
                             }
                         )
                     }
@@ -120,7 +114,7 @@ const SignUpScreen = () => {
                                 callback: setConfirmPasswordIsValid,
                                 condition: state.confirmPassword === state.password,
                                 id: "passwords_do_not_match",
-                                type: "error"
+                                type: "error",
                             }
                         )
                     }
@@ -128,15 +122,21 @@ const SignUpScreen = () => {
             </View>
             <TouchableOpacity
                 accessibilityRole="link"
+                accessibilityLabel="Forgot password link"
                 onPress={onPressForgotPassword}>
-                <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
+                <Text style={styles.forgotAndSignUpText}>
+                    Forgot Password?
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="button"
+                accessibilityLabel="Submit button"
                 disabled={submitIsDisabled}
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>
-                <Text style={styles.loginText}>Submit</Text>
+                <Text style={styles.loginText}>
+                    Submit
+                </Text>
             </TouchableOpacity>
         </ScrollView>
     );
