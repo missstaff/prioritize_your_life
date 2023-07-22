@@ -127,10 +127,13 @@ const SignUpScreen = () => {
                 />
             </View>
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressForgotPassword}>
                 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
+                a
                 disabled={submitIsDisabled}
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>

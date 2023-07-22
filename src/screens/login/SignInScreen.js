@@ -71,15 +71,18 @@ const SignInScreen = () => {
             </View>
 
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressForgotPassword}>
                 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressLogin}
                 style={styles.loginBtn}>
                 <Text style={styles.loginText}>LOGIN </Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="link"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>Signup</Text>
             </TouchableOpacity>

@@ -71,11 +71,13 @@ const PasswordResetScreen = () => {
             </View>
 
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>
                 <Text style={styles.loginText}>SUBMIT</Text>
             </TouchableOpacity>
             <TouchableOpacity
+                accessibilityRole="button"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>Signup</Text>
             </TouchableOpacity>
