@@ -39,13 +39,17 @@ elsif podfile_properties.key?('ios.flipper') then
 end
 
 target 'organizer' do
-  use_expo_modules!
-  config = use_native_modules!
+  project 'organizer', 'DevClient' => :debug
 
   use_frameworks! :linkage => :static
   $RNFirebaseAsStaticFramework = true
-  use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
-  use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
+
+  use_expo_modules!
+  config = use_native_modules!
+
+  
+  # use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
+  # use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
 
   # Flags change depending on the env values.
   flags = get_default_flags()
@@ -59,6 +63,19 @@ target 'organizer' do
     # Note that if you have use_frameworks! enabled, Flipper will not work if enabled
     # :flipper_configuration => flipper_config
   )
+
+  pod 'FirebaseCore'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore', :modular_headers => true
+  pod 'Firebase/Functions'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/DynamicLinks'
+
+  pod 'expo-dev-menu', path: '../node_modules/expo-dev-menu', :configuration => 'DevClient'
+  pod 'expo-dev-launcher', path: '../node_modules/expo-dev-launcher', :configuration => 'DevClient'
 
   post_install do |installer|
     react_native_post_install(
