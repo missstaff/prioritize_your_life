@@ -3,14 +3,15 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
 import { getFireApp } from "../../../getFireApp";
-import { displayToast, validateTextInput } from "../../utility/utilities";
+import { validateTextInput } from "../../utility/auth-utilities";
+import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
+const firebase = getFireApp();
 
 
 const PasswordResetScreen = () => {
 
-    const firebase = getFireApp();
     const navigation = useNavigation();
 
     const [state, setState] = useState({

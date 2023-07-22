@@ -3,14 +3,14 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
 import { getFireApp } from "../../../getFireApp";
-import { displayToast, validateTextInput } from "../../utility/utilities";
+import { validateTextInput } from "../../utility/auth-utilities";
+import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
-
+const firebase = getFireApp();
 
 const SignInScreen = () => {
 
-    const firebase = getFireApp();
     const navigation = useNavigation();
 
     const [state, setState] = useState({
@@ -21,20 +21,22 @@ const SignInScreen = () => {
 
     const onPressLogin = async () => {
         let user;
+        let isValidEmail = false;
+        let isValidPassword = false;
 
-        const isValidEmail = validateTextInput({
+        isValidEmail = validateTextInput({
             condition: state.email,
             id: "invalid_email",
             type: "error"
         });
 
-        const isValidPassword = validateTextInput({
+        isValidPassword = validateTextInput({
             condition: state.password,
             id: "password_required",
             type: "error"
         });
 
-        
+
         if (!isValidEmail || !isValidPassword) {
             return;
         }
@@ -67,7 +69,6 @@ const SignInScreen = () => {
         navigation.navigate("SignUp");
     };
 
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
@@ -90,18 +91,24 @@ const SignInScreen = () => {
             <TouchableOpacity
                 accessibilityRole="link"
                 onPress={onPressForgotPassword}>
-                <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
+                <Text style={styles.forgotAndSignUpText}>
+                    Forgot Password?
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="button"
                 onPress={onPressLogin}
                 style={styles.loginBtn}>
-                <Text style={styles.loginText}>LOGIN </Text>
+                <Text style={styles.loginText}>
+                    LOGIN
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="link"
                 onPress={onPressSignUp}>
-                <Text style={styles.forgotAndSignUpText}>Signup</Text>
+                <Text style={styles.forgotAndSignUpText}>
+                    Signup
+                </Text>
             </TouchableOpacity>
         </View>
     );

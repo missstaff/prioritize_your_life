@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppTextInput from "../../components/ui/AppTextInput";
-import { createAccount, validateTextInput } from "../../utility/utilities";
+import { createAccount, validateTextInput } from "../../utility/auth-utilities";
 import { APP_COLORS } from "../../utility/constants";
 import { styles } from "./Styles";
 

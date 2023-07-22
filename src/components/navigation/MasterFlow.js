@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { Text, useColorScheme } from "react-native";
+import { Text, View, useColorScheme } from "react-native";
 import { DarkTheme, DefaultTheme, NavigationContainer, useTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Toast from "react-native-toast-message";
 import HomeScreen from "../../screens/HomeScreen";
+import LoadingSpinner from "../ui/LoadingSpinner";
 import ProfileScreen from "../../screens/ProfileScreen";
-import PasswordResetScreen from "../../screens/login/PasswordResetScreen";
+import PasswordResetScreen from "../../screens/auth/PasswordResetScreen";
 import ShowIf from "../ShowIf";
-import SignInScreen from "../../screens/login/SignInScreen";
-import SignUpScreen from "../../screens/login/SignUpScreen";
+import SignInScreen from "../../screens/auth/SignInScreen";
+import SignUpScreen from "../../screens/auth/SignUpScreen";
 import { getFireApp } from "../../../getFireApp";
-import { displayToast, logOut } from "../../utility/utilities";
+import { logOut } from "../../utility/auth-utilities";
+import { displayToast } from "../../utility/utilities";
 import { APP_COLORS } from "../../utility/constants";
+const firebase = getFireApp();
 
 
 const MasterFlow = () => {
 
     let { colors } = useTheme();
     const scheme = useColorScheme();
-    const firebase = getFireApp();
+   
     const Stack = createNativeStackNavigator();
 
     const [isSignedIn, setIsSignedIn] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const textColor = scheme === "dark" ? colors.background : colors.text;
 
 
@@ -34,12 +38,30 @@ const MasterFlow = () => {
         } catch (error) {
             (console.log(`Error: ${error.message}\n${error.stack}`));
             displayToast("login_failure", "error");
+            setIsLoading(false);
             return;
         }
-
+        setIsLoading(false);
         return () => unsubscribe();
     }, []);
 
+
+    if (isLoading === true) {
+        return (
+            <View
+                style={{
+                    backgroundColor: APP_COLORS.primary,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "100%",
+                    width:"100%",
+                }}>
+                <LoadingSpinner color={APP_COLORS.secondary} size="large" />
+            </View>
+        );
+    };
 
     return (
         <>
