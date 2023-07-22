@@ -133,7 +133,6 @@ const SignUpScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 accessibilityRole="button"
-                a
                 disabled={submitIsDisabled}
                 onPress={onPressSubmit}
                 style={styles.loginBtn}>
