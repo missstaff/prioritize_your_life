@@ -3,11 +3,11 @@ WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (fil
 WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-21:34:25.141 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-21:34:25.376 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
-21:34:37.317 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 215ms, init: 0ms
-21:34:37.449 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-default-rtdb status Active to Active
-21:34:44.396 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
-21:34:44.405 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: organizer-default-rtdb
-21:34:44.417 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for organizer-default-rtdb
-21:34:44.429 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
+21:40:14.778 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+21:40:15.020 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+21:40:29.913 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 359ms, init: 0ms
+21:40:30.025 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-default-rtdb status Active to Active
+21:40:42.094 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+21:40:42.104 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: organizer-default-rtdb
+21:40:42.115 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for organizer-default-rtdb
+21:40:42.128 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
