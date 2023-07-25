@@ -1,7 +1,7 @@
-import { auth } from "../firebaseAdmin";
-import * as assert from "assert";
-import { UserRecord } from "../types";
 require("mocha");
+import * as assert from "assert";
+import { auth } from "../firebaseAdmin";
+import { UserRecord } from "../types";
 
 
 const user = {
@@ -10,6 +10,7 @@ const user = {
   password: "testPassword",
   phoneNumber: "+11234567890",
 };
+
 
 describe("User Authentication Tests", () => {
   let userRecord: UserRecord;

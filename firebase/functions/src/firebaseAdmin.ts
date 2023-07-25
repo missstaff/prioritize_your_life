@@ -1,9 +1,9 @@
-import * as admin from 'firebase-admin';
+import * as admin from "firebase-admin";
 const serviceAccount = require("../../services.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://organizer-9cce6-rtdb.firebaseio.com", 
+  databaseURL: "https://organizer-9cce6-rtdb.firebaseio.com",
 });
 
 
