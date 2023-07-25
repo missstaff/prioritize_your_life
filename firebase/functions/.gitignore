@@ -7,6 +7,3 @@ typings/
 
 # Node.js dependency directory
 node_modules/
-
-# Service json
-services.json

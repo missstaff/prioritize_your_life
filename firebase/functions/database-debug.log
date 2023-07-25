@@ -3,11 +3,7 @@ WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (fil
 WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-19:46:10.764 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-19:46:11.031 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
-19:46:24.659 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-9cce6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 209ms, init: 0ms
-19:46:24.763 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-9cce6-default-rtdb status Active to Active
-19:46:57.120 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
-19:46:57.132 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: organizer-9cce6-default-rtdb
-19:46:57.146 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for organizer-9cce6-default-rtdb
-19:46:57.157 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
+19:52:10.576 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+19:52:10.862 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+19:52:24.790 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-9cce6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 287ms, init: 0ms
+19:52:24.862 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-9cce6-default-rtdb status Active to Active

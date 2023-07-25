@@ -1,0 +1,281 @@
+[debug] [2023-07-25T02:52:02.630Z] ----------------------------------------------------------------------
+[debug] [2023-07-25T02:52:02.632Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2023-07-25T02:52:02.632Z] CLI Version:   12.4.5
+[debug] [2023-07-25T02:52:02.633Z] Platform:      darwin
+[debug] [2023-07-25T02:52:02.633Z] Node Version:  v18.16.1
+[debug] [2023-07-25T02:52:02.635Z] Time:          Mon Jul 24 2023 19:52:02 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-07-25T02:52:02.635Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-25T02:52:02.804Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-25T02:52:02.805Z] > authorizing via signed-in user (shawnastaff@gmail.com)
+[debug] [2023-07-25T02:52:02.900Z] openjdk version "11.0.11" 2021-04-20
+[debug] [2023-07-25T02:52:02.905Z] 
+OpenJDK Runtime Environment AdoptOpenJDK-11.0.11+9 (build 11.0.11+9)
+OpenJDK 64-Bit Server VM AdoptOpenJDK-11.0.11+9 (build 11.0.11+9, mixed mode)
+
+[debug] [2023-07-25T02:52:02.909Z] Parsed Java major version: 11
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, storage"}}
+[debug] [2023-07-25T02:52:04.997Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.997Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.997Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.998Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.998Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.998Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:04.998Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-07-25T02:52:05.009Z] [hub] writing locator at /var/folders/00/8c6pst295j7_2f16c6_td0jh0000gn/T/hub-organizer-9cce6.json
+[debug] [2023-07-25T02:52:05.585Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:05.585Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-07-25T02:52:05.586Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: hosting, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mhosting, pubsub\u001b[22m"}}
+[debug] [2023-07-25T02:52:05.589Z] defaultcredentials: writing to file /Users/miss/.config/firebase/shawnastaff_gmail_com_application_default_credentials.json
+[debug] [2023-07-25T02:52:05.597Z] Setting GAC to /Users/miss/.config/firebase/shawnastaff_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/miss/.config/firebase/shawnastaff_gmail_com_application_default_credentials.json"}}
+[debug] [2023-07-25T02:52:05.599Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6/adminSdkConfig [none]
+[debug] [2023-07-25T02:52:06.015Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6/adminSdkConfig 200
+[debug] [2023-07-25T02:52:06.015Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6/adminSdkConfig {"projectId":"organizer-9cce6","databaseURL":"https://organizer-9cce6-default-rtdb.firebaseio.com","storageBucket":"organizer-9cce6.appspot.com","locationId":"us-west2"}
+[debug] [2023-07-25T02:52:06.081Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-07-25T02:52:06.082Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-07-25T02:52:06.082Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/miss/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","organizer-9cce6","--rules","/Volumes/seagate/Documents/organizer/firebase/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/miss/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"organizer-9cce6\",\"--rules\",\"/Volumes/seagate/Documents/organizer/firebase/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-07-25T02:52:07.803Z] Jul 24, 2023 7:52:07 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 24, 2023 7:52:07 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2023-07-25T02:52:07.845Z] API endpoint: http://127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-07-25T02:52:07.849Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6 [none]
+[debug] [2023-07-25T02:52:08.149Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6 200
+[debug] [2023-07-25T02:52:08.150Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/organizer-9cce6 {"projectId":"organizer-9cce6","projectNumber":"1011251728070","displayName":"organizer","name":"projects/organizer-9cce6","resources":{"hostingSite":"organizer-9cce6","realtimeDatabaseInstance":"organizer-9cce6-default-rtdb","storageBucket":"organizer-9cce6.appspot.com","locationId":"us-west2"},"state":"ACTIVE","etag":"1_acee5975-e1eb-4d85-ae9d-54e7dfae220d"}
+[debug] [2023-07-25T02:52:08.150Z] database rules config:  [{"instance":"organizer-9cce6-default-rtdb","rules":"/Volumes/seagate/Documents/organizer/firebase/database.rules.json"}]
+[debug] [2023-07-25T02:52:08.155Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-07-25T02:52:08.155Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-07-25T02:52:08.155Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2023-07-25T02:52:08.156Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/miss/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning","--functions_emulator_host","127.0.0.1","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/Users/miss/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\",\"--functions_emulator_host\",\"127.0.0.1\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2023-07-25T02:52:09.619Z] WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/Users/miss/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release {"metadata":{"emulator":{"name":"database"},"message":"WARNING: An illegal reflective access operation has occurred\nWARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/Users/miss/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar) to field sun.nio.ch.SelectorImpl.selectedKeys\nWARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil\nWARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations\nWARNING: All illegal access operations will be denied in a future release"}}
+[debug] [2023-07-25T02:52:09.619Z] 
+ {"metadata":{"emulator":{"name":"database"},"message":"\n"}}
+[debug] [2023-07-25T02:52:10.578Z] 19:52:10.576 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"19:52:10.576 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2023-07-25T02:52:10.863Z] 19:52:10.862 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"19:52:10.862 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2023-07-25T02:52:20.581Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-07-25T02:52:21.992Z] Temp file directory for storage emulator: /var/folders/00/8c6pst295j7_2f16c6_td0jh0000gn/T/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /var/folders/00/8c6pst295j7_2f16c6_td0jh0000gn/T/firebase/storage/blobs"}}
+[debug] [2023-07-25T02:52:22.004Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-07-25T02:52:22.005Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-07-25T02:52:22.005Z] Starting Emulator UI with command {"binary":"node","args":["/Users/miss/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/miss/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-07-25T02:52:22.152Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-07-25T02:52:22.152Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Volumes/seagate/Documents/organizer/firebase/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Volumes/seagate/Documents/organizer/firebase/functions\" for Cloud Functions..."}}
+[debug] [2023-07-25T02:52:22.265Z] Validating nodejs source
+[debug] [2023-07-25T02:52:23.329Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-07-25T02:52:23.329Z] Building nodejs source
+[debug] [2023-07-25T02:52:23.329Z] Failed to find version of module node: reached end of search path /Volumes/seagate/Documents/organizer/firebase/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-07-25T02:52:23.332Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-07-25T02:52:23.342Z] Found firebase-functions binary at '/Volumes/seagate/Documents/organizer/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8664
+
+[debug] [2023-07-25T02:52:24.097Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2023-07-25T02:52:24.149Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=organizer-9cce6-default-rtdb
+[debug] [2023-07-25T02:52:24.149Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2023-07-25T02:52:24.791Z] 19:52:24.790 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-9cce6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 287ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"19:52:24.790 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - organizer-9cce6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 287ms, init: 0ms\n"}}
+[debug] [2023-07-25T02:52:24.862Z] 19:52:24.862 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-9cce6-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"19:52:24.862 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace organizer-9cce6-default-rtdb status Active to Active\n"}}
+[debug] [2023-07-25T02:52:24.919Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2023-07-25T02:52:24.919Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database  │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage   │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-07-25T02:52:26.852Z] File /Volumes/seagate/Documents/organizer/firebase/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Volumes/seagate/Documents/organizer/firebase/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2023-07-25T02:52:27.238Z] File /Volumes/seagate/Documents/organizer/firebase/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Volumes/seagate/Documents/organizer/firebase/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2023-07-25T02:52:27.239Z] File /Volumes/seagate/Documents/organizer/firebase/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Volumes/seagate/Documents/organizer/firebase/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2023-07-25T02:52:28.243Z] Validating nodejs source
+[debug] [2023-07-25T02:52:30.794Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-07-25T02:52:30.795Z] Building nodejs source
+[debug] [2023-07-25T02:52:30.795Z] Failed to find version of module node: reached end of search path /Volumes/seagate/Documents/organizer/firebase/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-07-25T02:52:30.796Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-07-25T02:52:30.797Z] Found firebase-functions binary at '/Volumes/seagate/Documents/organizer/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8588
+
+[debug] [2023-07-25T02:52:32.596Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-07-25T02:52:32.643Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast [none]
+[debug] [2023-07-25T02:52:32.643Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"eventId":"19367d38-ef77-4017-8aab-110384639b7e","eventType":"providers/firebase.auth/eventTypes/user.create","resource":{"name":"projects/organizer-9cce6","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2023-07-25T02:52:32.642Z","data":{"uid":"WJ9y3Zhj5c3fHIyZD4faTavhP6ak","email":"test@example.com","emailVerified":false,"displayName":"Test","phoneNumber":"+11234567890","metadata":{"creationTime":"2023-07-25T02:52:32.641Z","lastSignInTime":"2023-07-25T02:52:32.641Z"},"customClaims":{},"providerData":[{"providerId":"password","email":"test@example.com","federatedId":"test@example.com","rawId":"test@example.com","displayName":"Test"},{"providerId":"phone","phoneNumber":"+11234567890","rawId":"+11234567890"}]}}
+[info] shutdown requested via /__/quitquitquit
+
+[debug] [2023-07-25T02:52:32.652Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast 200
+[debug] [2023-07-25T02:52:32.652Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"status":"multicast_acknowledged"}
+[info] ✅ User creation test passed.
+
+[info] ✅ User update test passed.
+
+[debug] [2023-07-25T02:52:32.712Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast [none]
+[debug] [2023-07-25T02:52:32.712Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"eventId":"a876f9b5-e10f-4e71-a8d1-564196525755","eventType":"providers/firebase.auth/eventTypes/user.delete","resource":{"name":"projects/organizer-9cce6","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2023-07-25T02:52:32.711Z","data":{"uid":"WJ9y3Zhj5c3fHIyZD4faTavhP6ak","email":"test@example.com","emailVerified":false,"displayName":"user","phoneNumber":"+11234567890","metadata":{"creationTime":"2023-07-25T02:52:32.641Z","lastSignInTime":"2023-07-25T02:52:32.641Z"},"customClaims":{},"providerData":[{"providerId":"password","email":"test@example.com","federatedId":"test@example.com","rawId":"test@example.com","displayName":"user"},{"providerId":"phone","phoneNumber":"+11234567890","rawId":"+11234567890"}]}}
+[debug] [2023-07-25T02:52:32.717Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast 200
+[debug] [2023-07-25T02:52:32.717Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"status":"multicast_acknowledged"}
+[info] ✅ User deletion test passed.
+Passed: 3 out of 3
+Failed: 0
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2023-07-25T02:53:06.847Z] Jul 24, 2023 7:53:06 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jul 24, 2023 7:53:06 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2023-07-25T02:53:10.128Z] File /Volumes/seagate/Documents/organizer/firebase/functions/src/firebaseAdmin.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Volumes/seagate/Documents/organizer/firebase/functions/src/firebaseAdmin.ts changed, reloading triggers"}}
+[debug] [2023-07-25T02:53:11.129Z] Validating nodejs source
+[debug] [2023-07-25T02:53:12.441Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-07-25T02:53:12.442Z] Building nodejs source
+[debug] [2023-07-25T02:53:12.442Z] Failed to find version of module node: reached end of search path /Volumes/seagate/Documents/organizer/firebase/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-07-25T02:53:12.443Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-07-25T02:53:12.457Z] Found firebase-functions binary at '/Volumes/seagate/Documents/organizer/firebase/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8475
+
+[debug] [2023-07-25T02:53:13.281Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-07-25T02:53:13.289Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast [none]
+[debug] [2023-07-25T02:53:13.289Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"eventId":"1c782146-889a-4843-9440-86376a0a9014","eventType":"providers/firebase.auth/eventTypes/user.create","resource":{"name":"projects/organizer-9cce6","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2023-07-25T02:53:13.289Z","data":{"uid":"sMDjqLt1o5xOa2lDvef55N2AiNuc","email":"test@example.com","emailVerified":false,"displayName":"Test","phoneNumber":"+11234567890","metadata":{"creationTime":"2023-07-25T02:53:13.288Z","lastSignInTime":"2023-07-25T02:53:13.288Z"},"customClaims":{},"providerData":[{"providerId":"password","email":"test@example.com","federatedId":"test@example.com","rawId":"test@example.com","displayName":"Test"},{"providerId":"phone","phoneNumber":"+11234567890","rawId":"+11234567890"}]}}
+[info] shutdown requested via /__/quitquitquit
+
+[debug] [2023-07-25T02:53:13.294Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast 200
+[debug] [2023-07-25T02:53:13.294Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"status":"multicast_acknowledged"}
+[info] ✅ User creation test passed.
+
+[info] ✅ User update test passed.
+
+[debug] [2023-07-25T02:53:13.318Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast [none]
+[debug] [2023-07-25T02:53:13.318Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"eventId":"9b188ba9-0c19-4f06-8724-c69a7fdbaf27","eventType":"providers/firebase.auth/eventTypes/user.delete","resource":{"name":"projects/organizer-9cce6","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2023-07-25T02:53:13.318Z","data":{"uid":"sMDjqLt1o5xOa2lDvef55N2AiNuc","email":"test@example.com","emailVerified":false,"displayName":"user","phoneNumber":"+11234567890","metadata":{"creationTime":"2023-07-25T02:53:13.288Z","lastSignInTime":"2023-07-25T02:53:13.288Z"},"customClaims":{},"providerData":[{"providerId":"password","email":"test@example.com","federatedId":"test@example.com","rawId":"test@example.com","displayName":"user"},{"providerId":"phone","phoneNumber":"+11234567890","rawId":"+11234567890"}]}}
+[info] ✅ User deletion test passed.
+Passed: 3 out of 3
+Failed: 0
+
+[debug] [2023-07-25T02:53:13.327Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast 200
+[debug] [2023-07-25T02:53:13.327Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/organizer-9cce6/trigger_multicast {"status":"multicast_acknowledged"}
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
