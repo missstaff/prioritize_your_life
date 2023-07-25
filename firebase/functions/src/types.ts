@@ -12,5 +12,5 @@ export interface UserRecord {
     metadata?: UserMetadata,
     phoneNumber?: String;
     photoUrl?: String;
-    uid?: string;
+    uid: string;
 };

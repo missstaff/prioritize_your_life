@@ -1,3 +1,3 @@
-import { authTests } from './tests/auth-tests'; 
-
-authTests();
+import * as admin from "firebase-admin";
+const firstTimeRun = admin.apps.length == 0;
+if (firstTimeRun) admin.initializeApp();
