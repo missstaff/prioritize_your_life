@@ -1,4 +1,4 @@
-import {  useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 
 jest.mock("@react-navigation/native");
 jest.mock("react-native/Libraries/EventEmitter/NativeEventEmitter");
@@ -10,6 +10,11 @@ jest.mock("@react-native-firebase/functions", () => require("@react-native-fireb
 
 jest.mock("./getFireApp", () => ({
   getFireApp: jest.fn(),
+}));
+
+jest.mock("@react-navigation/native", () => ({
+  ...jest.requireActual("@react-navigation/native"),
+  useNavigation: jest.fn(),
 }));
 
 jest.mock("@react-navigation/native", () => ({

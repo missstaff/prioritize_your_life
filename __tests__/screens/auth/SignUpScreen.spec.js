@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import SignUpScreen from "../../src/screens/auth/SignUpScreen";
+import SignUpScreen from "../../../src/screens/auth/SignUpScreen";
 
 
 describe("SignUpScreen", () => {
