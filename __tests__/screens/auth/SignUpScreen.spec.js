@@ -3,11 +3,13 @@ import SignUpScreen from "../../../src/screens/auth/SignUpScreen";
 
 
 describe("SignUpScreen", () => {
-  it("SignUpScreen should render correctly", () => {
-    const tree = renderer.create(<SignUpScreen />).toJSON()
-    expect(tree).toMatchSnapshot()
-  });
-  afterEach(() => {
+
+  afterAll(() => {
     jest.clearAllMocks();
+  });
+
+  it("SignUpScreen should render correctly", () => {
+    const tree = renderer.create(<SignUpScreen />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
