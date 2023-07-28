@@ -1,3 +1,4 @@
+jest.mock("@react-navigation/native");
 jest.mock("react-native/Libraries/EventEmitter/NativeEventEmitter");
 jest.mock("@react-native-firebase/app", () => require("@react-native-firebase.js").default);
 jest.mock("@react-native-firebase/auth", () => require("@react-native-firebase.js").default);
