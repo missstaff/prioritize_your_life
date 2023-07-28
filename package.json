@@ -7,7 +7,8 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "build-android": "mkdir -p android/organizer && react-native bundle --dev false --platform android --entry-file index.js --assets-dest android/organizer --bundle-output android/organizer/main.jsbundle",
-    "build-ios": "mkdir -p android/organizer && react-native bundle --dev false --platform ios --entry-file index.js --assets-dest ios/organizer --bundle-output ios/organizer/main.jsbundle"
+    "build-ios": "mkdir -p android/organizer && react-native bundle --dev false --platform ios --entry-file index.js --assets-dest ios/organizer --bundle-output ios/organizer/main.jsbundle",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
@@ -34,10 +35,30 @@
     "react-native-screens": "~3.20.0",
     "react-native-size-matters": "^0.4.0",
     "react-native-toast-message": "^2.1.6",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.18.10",
+    "react-test-renderer": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "jest": "^29.2.1",
+    "jest-expo": "^49.0.0"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "rootDir": ".",
+    "transform": {
+      "\\.(js|jsx|ts|tsx)$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+    ],
+    "testPathIgnorePatterns": [
+      "/firebase/functions/lib/tests/",
+      "firebase/functions/src/tests"
+    ]
   },
   "private": true
 }
