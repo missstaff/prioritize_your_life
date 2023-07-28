@@ -9,3 +9,9 @@ jest.mock("@react-native-firebase/functions", () => require("@react-native-fireb
 jest.mock("./getFireApp", () => ({
   getFireApp: jest.fn(),
 }));
+
+jest.mock("@react-navigation/native", () => ({
+  ...jest.requireActual("@react-navigation/native"),
+  useTheme: jest.fn(),
+}));
+useTheme.mockReturnValue({ colors: { text: "rgb(28, 28, 30)", } });
