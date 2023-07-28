@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import ProfileScreen from "../../src/screens/ProfileScreen";
+import ProfileScreen from "../../../src/screens/ProfileScreen";
 
 
 
