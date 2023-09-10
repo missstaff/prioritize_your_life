@@ -83,7 +83,7 @@ const PasswordResetScreen = () => {
                 accessibilityRole="button"
                 onPress={onPressSignUp}>
                 <Text style={styles.forgotAndSignUpText}>
-                    Signup
+                    Sign In
                 </Text>
             </TouchableOpacity>
         </View>
