@@ -12,6 +12,13 @@ jest.mock("./getFireApp", () => ({
   getFireApp: jest.fn(),
 }));
 
+jest.mock('@react-native-firebase/auth', () => ({
+  __esModule: true,
+  default: {
+    signInWithEmailAndPassword: jest.fn(),
+  },
+}));
+
 jest.mock("@react-navigation/native", () => {
   const originalNavigationModule = jest.requireActual("@react-navigation/native");
   return {

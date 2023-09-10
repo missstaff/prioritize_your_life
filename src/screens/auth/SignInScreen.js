@@ -50,8 +50,7 @@ const SignInScreen = () => {
         if (!isValidEmail || !isValidPassword) {
             return;
         }
-
-
+        
         try {
             user = await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
         } catch (error) {
